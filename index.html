@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videojuego: The Legend of Zelda</title>
+    <title>Warframe - Juego de Acción en Línea</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>The Legend of Zelda</h1>
+        <h1>Warframe</h1>
         <nav>
             <ul>
                 <li><a href="#descripcion">Descripción</a></li>
@@ -19,28 +19,58 @@
     </header>
 
     <section id="descripcion">
-        <h2>Descripción del Juego</h2>
-        <p><strong>The Legend of Zelda</strong> es una serie de videojuegos de acción y aventura creada por Nintendo. El protagonista principal, Link, debe rescatar a la princesa Zelda y luchar contra el malvado Ganon para salvar el reino de Hyrule.</p>
-        <img src="zelda.jpg" alt="The Legend of Zelda" id="zelda-img">
+        <h2>¿Qué es Warframe?</h2>
+        <p><strong>Warframe</strong> es un juego de disparos en tercera persona en línea, desarrollado por Digital Extremes. En el juego, los jugadores controlan a los Tenno, una raza de guerreros espaciales que utilizan poderosos trajes biomecánicos llamados Warframes para luchar contra varias facciones enemigas.</p>
+        <img src="warframe.jpg" alt="Warframe" id="warframe-img">
     </section>
 
     <section id="jugabilidad">
         <h2>Jugabilidad</h2>
-        <p>En los juegos de Zelda, los jugadores deben explorar un mundo abierto, resolver acertijos, luchar contra enemigos y recolectar objetos especiales. La serie se caracteriza por su exploración y sus intrincados rompecabezas.</p>
+        <p>Warframe es conocido por su acción rápida y estilo de juego cooperativo. Los jugadores pueden realizar misiones tanto en solitario como en equipo, explorando planetas y estaciones espaciales, luchando contra enemigos, y recolectando recursos.</p>
+        <ul>
+            <li>Lucha en tiempo real con armas y habilidades especiales.</li>
+            <li>Explora un mundo abierto con una narrativa dinámica.</li>
+            <li>Realiza misiones cooperativas con hasta 4 jugadores.</li>
+        </ul>
     </section>
 
     <section id="personajes">
-        <h2>Personajes Principales</h2>
+        <h2>Personajes y Warframes</h2>
+        <p>Los jugadores pueden elegir entre una variedad de Warframes, cada uno con habilidades únicas. Algunos de los más populares son:</p>
         <ul>
-            <li><strong>Link:</strong> El héroe principal, que se embarca en su aventura para salvar a Zelda y proteger Hyrule.</li>
-            <li><strong>Zelda:</strong> La princesa del reino de Hyrule, quien generalmente es capturada por las fuerzas del mal.</li>
-            <li><strong>Ganon:</strong> El principal antagonista, quien busca apoderarse de Hyrule.</li>
+            <li><strong>Excalibur:</strong> Un Warframe equilibrado, perfecto para nuevos jugadores. Su habilidad definitiva le permite invocar una espada de energía.</li>
+            <li><strong>Rhino:</strong> Un Warframe de tanque, ideal para absorber daño y controlar el campo de batalla.</li>
+            <li><strong>Nova:</strong> Un Warframe con habilidades gravitacionales, capaz de causar enormes explosiones.</li>
         </ul>
     </section>
 
     <footer>
-        <p>Videojuego creado por Nintendo. Todos los derechos reservados.</p>
+        <p>Desarrollado por Digital Extremes. Todos los derechos reservados.</p>
     </footer>
 
+    <button id="info-btn">Más Información</button>
+
+    <dialog id="info-dialog">
+        <h3>Curiosidades sobre Warframe</h3>
+        <p>Warframe se lanzó en 2013 y, desde entonces, ha evolucionado con actualizaciones frecuentes, introduciendo nuevas historias, mapas y Warframes. Es completamente gratuito, pero ofrece compras dentro del juego.</p>
+        <button id="close-btn">Cerrar</button>
+    </dialog>
+
+    <script>
+        // Obtener elementos del DOM
+        const infoBtn = document.getElementById('info-btn');
+        const infoDialog = document.getElementById('info-dialog');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Mostrar el diálogo al hacer clic en el botón
+        infoBtn.addEventListener('click', () => {
+            infoDialog.showModal();
+        });
+
+        // Cerrar el diálogo al hacer clic en el botón "Cerrar"
+        closeBtn.addEventListener('click', () => {
+            infoDialog.close();
+        });
+    </script>
 </body>
 </html>
