@@ -3,74 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Warframe - Juego de Acción en Línea</title>
+    <title>Warframe - Personajes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
-        <h1>Warframe</h1>
-        <nav>
-            <ul>
-                <li><a href="#descripcion">Descripción</a></li>
-                <li><a href="#jugabilidad">Jugabilidad</a></li>
-                <li><a href="#personajes">Personajes</a></li>
-            </ul>
-        </nav>
+        <h1>Bienvenido al Mundo de Warframe</h1>
+        <p>Explora los personajes y habilidades de Warframe.</p>
     </header>
 
-    <section id="descripcion">
-        <h2>¿Qué es Warframe?</h2>
-        <p><strong>Warframe</strong> es un juego de disparos en tercera persona en línea, desarrollado por Digital Extremes. En el juego, los jugadores controlan a los Tenno, una raza de guerreros espaciales que utilizan poderosos trajes biomecánicos llamados Warframes para luchar contra varias facciones enemigas.</p>
-        <img src="warframe.jpg" alt="Warframe" id="warframe-img">
-    </section>
+    <main>
+        <section>
+            <h2>Personajes de Warframe</h2>
 
-    <section id="jugabilidad">
-        <h2>Jugabilidad</h2>
-        <p>Warframe es conocido por su acción rápida y estilo de juego cooperativo. Los jugadores pueden realizar misiones tanto en solitario como en equipo, explorando planetas y estaciones espaciales, luchando contra enemigos, y recolectando recursos.</p>
-        <ul>
-            <li>Lucha en tiempo real con armas y habilidades especiales.</li>
-            <li>Explora un mundo abierto con una narrativa dinámica.</li>
-            <li>Realiza misiones cooperativas con hasta 4 jugadores.</li>
-        </ul>
-    </section>
+            <!-- Personaje 1: Excalibur -->
+            <article class="character">
+                <h3>Excalibur</h3>
+                <p>Excalibur es un Warframe balanceado, ideal para jugadores que se inician en el juego. Su habilidad principal es el "Radial Blind", que aturde a los enemigos cercanos.</p>
+                <button class="infoBtn" data-character="excalibur">Más Información</button>
+            </article>
 
-    <section id="personajes">
-        <h2>Personajes y Warframes</h2>
-        <p>Los jugadores pueden elegir entre una variedad de Warframes, cada uno con habilidades únicas. Algunos de los más populares son:</p>
-        <ul>
-            <li><strong>Excalibur:</strong> Un Warframe equilibrado, perfecto para nuevos jugadores. Su habilidad definitiva le permite invocar una espada de energía.</li>
-            <li><strong>Rhino:</strong> Un Warframe de tanque, ideal para absorber daño y controlar el campo de batalla.</li>
-            <li><strong>Nova:</strong> Un Warframe con habilidades gravitacionales, capaz de causar enormes explosiones.</li>
-        </ul>
-    </section>
+            <!-- Personaje 2: Nova -->
+            <article class="character">
+                <h3>Nova</h3>
+                <p>Nova es un Warframe centrado en el control de masas. Su habilidad "Anti-materia" puede destruir a los enemigos con una explosión masiva.</p>
+                <button class="infoBtn" data-character="nova">Más Información</button>
+            </article>
+
+            <!-- Personaje 3: Rhino -->
+            <article class="character">
+                <h3>Rhino</h3>
+                <p>Rhino es un Warframe tanque que puede generar una enorme resistencia y causar daño masivo. Su habilidad "Rhino Charge" le permite embestir a los enemigos.</p>
+                <button class="infoBtn" data-character="rhino">Más Información</button>
+            </article>
+
+            <!-- Personaje 4: Volt -->
+            <article class="character">
+                <h3>Volt</h3>
+                <p>Volt es un Warframe eléctrico, capaz de utilizar la energía para manipular la velocidad y causar daño. Su habilidad "Electric Shield" otorga protección a los aliados.</p>
+                <button class="infoBtn" data-character="volt">Más Información</button>
+            </article>
+        </section>
+        
+        <!-- Cuadro de información de cada personaje -->
+        <dialog id="infoDialog">
+            <h3 id="dialogTitle">Más sobre el Personaje</h3>
+            <p id="dialogDescription"></p>
+            <button id="closeDialog">Cerrar</button>
+        </dialog>
+
+    </main>
 
     <footer>
-        <p>Desarrollado por Digital Extremes. Todos los derechos reservados.</p>
+        <p>© 2025 Warframe. Todos los derechos reservados.</p>
     </footer>
 
-    <button id="info-btn">Más Información</button>
-
-    <dialog id="info-dialog">
-        <h3>Curiosidades sobre Warframe</h3>
-        <p>Warframe se lanzó en 2013 y, desde entonces, ha evolucionado con actualizaciones frecuentes, introduciendo nuevas historias, mapas y Warframes. Es completamente gratuito, pero ofrece compras dentro del juego.</p>
-        <button id="close-btn">Cerrar</button>
-    </dialog>
-
     <script>
-        // Obtener elementos del DOM
-        const infoBtn = document.getElementById('info-btn');
-        const infoDialog = document.getElementById('info-dialog');
-        const closeBtn = document.getElementById('close-btn');
+        // Función para abrir el cuadro de diálogo con más información
+        const infoBtns = document.querySelectorAll('.infoBtn');
+        const infoDialog = document.getElementById('infoDialog');
+        const closeDialog = document.getElementById('closeDialog');
+        const dialogTitle = document.getElementById('dialogTitle');
+        const dialogDescription = document.getElementById('dialogDescription');
 
-        // Mostrar el diálogo al hacer clic en el botón
-        infoBtn.addEventListener('click', () => {
-            infoDialog.showModal();
+        // Información de los personajes
+        const characters = {
+            'excalibur': {
+                title: 'Excalibur',
+                description: 'Excalibur es un Warframe balanceado, ideal para jugadores que se inician en el juego. Su habilidad "Radial Blind" aturde a los enemigos cercanos, y "Radial Javelin" lanza javalinas a gran distancia para atacar enemigos lejanos. También posee una habilidad definitiva "Exalted Blade", que convierte su espada en una arma devastadora.'
+            },
+            'nova': {
+                title: 'Nova',
+                description: 'Nova es un Warframe de control de masas. Con su habilidad "Anti-materia", puede destruir a los enemigos cercanos con una explosión masiva. También puede usar "Null Star" para crear una protección energética alrededor de ella y "Wormhole" para teletransportarse, mientras que su habilidad definitiva "Molecular Prime" ralentiza a los enemigos.'
+            },
+            'rhino': {
+                title: 'Rhino',
+                description: 'Rhino es un Warframe con un enfoque en la resistencia y el daño. Su habilidad "Rhino Charge" permite embestir a los enemigos y dañarlos, mientras que "Iron Skin" le otorga una enorme defensa. "Roar" aumenta el daño infligido, y su habilidad definitiva "Rhino Stomp" hace temblar el suelo, dañando a los enemigos cercanos.'
+            },
+            'volt': {
+                title: 'Volt',
+                description: 'Volt es un Warframe eléctrico. Su habilidad "Shock" permite causar daño eléctrico a los enemigos cercanos, mientras que "Speed" aumenta la velocidad de los aliados. "Electric Shield" otorga un escudo de energía que protege a los compañeros de equipo, y su habilidad definitiva "Discharge" libera una poderosa onda de energía eléctrica.'
+            }
+        };
+
+        // Abre el cuadro de diálogo al hacer clic en el botón
+        infoBtns.forEach(button => {
+            button.addEventListener('click', function() {
+                const character = this.dataset.character;  // Obtiene el personaje desde el data-attribute
+                dialogTitle.textContent = characters[character].title;
+                dialogDescription.textContent = characters[character].description;
+                infoDialog.showModal();
+            });
         });
 
-        // Cerrar el diálogo al hacer clic en el botón "Cerrar"
-        closeBtn.addEventListener('click', () => {
+        // Cierra el cuadro de diálogo
+        closeDialog.addEventListener('click', () => {
             infoDialog.close();
         });
     </script>
+
 </body>
 </html>

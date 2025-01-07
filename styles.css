@@ -1,79 +1,48 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #2b2b2b;
-    color: #fff;
+    background-color: #121212; /* Fondo oscuro para resaltar el contenido */
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
 }
 
+/* Estilo del encabezado */
 header {
-    background-color: #1f1f1f;
-    color: #00b3b3;
+    background-color: #333333; /* Color oscuro para el encabezado */
+    color: #00b3b3; /* Color de texto para contraste */
     padding: 20px;
     text-align: center;
 }
 
 h1 {
     font-size: 36px;
-    margin: 0;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #00b3b3;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-section {
-    padding: 20px;
-    background-color: #333;
-    margin: 20px;
-    border-radius: 10px;
 }
 
 h2 {
     font-size: 28px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Estilo del contenido principal */
+main {
+    padding: 20px;
+}
+
+.character {
+    background-color: #222222;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.character h3 {
     color: #00b3b3;
-}
-
-#descripcion p {
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-#warframe-img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-}
-
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-footer {
-    background-color: #1f1f1f;
-    color: #00b3b3;
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    font-size: 24px;
 }
 
 button {
@@ -83,32 +52,40 @@ button {
     border: none;
     font-size: 16px;
     cursor: pointer;
-    margin: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 10px;
 }
 
-#info-dialog {
-    width: 400px;
+button:hover {
+    background-color: #008080;
+}
+
+/* Estilo del cuadro de diálogo */
+dialog {
+    background-color: #008080;
+    border-radius: 8px;
     padding: 20px;
-    background-color: #333;
-    border: solid 2px #00b3b3;
-    border-radius: 10px;
-    color: white;
+    width: 80%;
+    max-width: 500px;
 }
 
-#close-btn {
-    background-color: #00b3b3;
+#closeDialog {
+    background-color: #ff4444;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
 }
 
-/* Estilos para cuando pasamos el ratón sobre los enlaces y botones */
-nav ul li a:hover, button:hover, #close-btn:hover {
-    color: #1f1f1f;
-    background-color: #00d1d1;
+#closeDialog:hover {
+    background-color: #ff0000;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #333333;
+    color: #00b3b3;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
